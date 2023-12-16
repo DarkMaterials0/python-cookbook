@@ -15,6 +15,9 @@ class PriorityQueue:
 
     def pop(self):
         return heapq.heappop(self._queue)[-1]
+    
+    def print(self):
+        print(self._queue)
 
 # Example use
 class Item:
@@ -25,9 +28,13 @@ class Item:
 
 q = PriorityQueue()
 q.push(Item('foo'), 1)
+q.print()
 q.push(Item('bar'), 5)
+q.print()
 q.push(Item('spam'), 4)
+q.print()
 q.push(Item('grok'), 1)
+q.print()
 
 print("Should be bar:", q.pop())
 print("Should be spam:", q.pop())
